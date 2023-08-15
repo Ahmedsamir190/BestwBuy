@@ -1,0 +1,91 @@
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+.form {
+  box-shadow: 1px 1px 20px 12px gainsboro;
+  margin: 65px 0;
+  line-height: 3.6;
+  padding: 22px 30px;
+}
+.title label,
+.description label,
+.price label {
+  font-weight: 900;
+  font-size: x-large;
+  margin: 0;
+}
+.backgroundimage {
+  background-image: url("/edit2.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.backgroundimage h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  letter-spacing: 25.6px;
+  font-weight: 900;
+}
+@media (max-width: 991px) {
+  .backgroundimage h1 {
+    letter-spacing: 0px;
+  }
+}
+.backgroundimage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000094;
+}
+
+.backgroundimage span:hover {
+  color: black;
+  transition: 0.9s;
+}
+.backgroundimage span {
+  font-size: 100px;
+  font-weight: 900;
+}
+.backgroundimage a {
+  color: white !important;
+  background-color: black;
+  padding: 10px 27px;
+  z-index: 5;
+  font-weight: 900;
+  border-radius: 14%;
+}
+.backgroundimage::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-style: solid;
+  border-width: 32px 50vw 0px 50vw;
+  border-color: transparent white transparent white;
+}
+.addproducttitle {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 2%;
+  letter-spacing: 5.6px;
+  text-align: center;
+  margin: 60px 0 0;
+}
+@media (max-width: 991px) {
+  .addproducttitle h1 {
+    letter-spacing: 0px;
+  }
+}
