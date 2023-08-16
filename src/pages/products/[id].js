@@ -99,7 +99,7 @@ function Info(props, deviceType) {
                         height: 800,
                       },
                     }}
-                    enlargedImagePosition="beside"
+                    enlargedImagePosition="over"
                   />
                   {/* {props.spacficproduct.images[0] ? (
                     <Image
