@@ -177,7 +177,7 @@ function EditProductt(props) {
                   setValidation(true);
                 }}
               >
-                Submit form
+               Update
               </button>
             </div>
           </form>
