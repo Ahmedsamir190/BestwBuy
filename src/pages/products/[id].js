@@ -69,7 +69,7 @@ function Info(props, deviceType) {
                 <Link href={"/products"}>products</Link>
               </li>
               /<li>{props.spacficproduct.category.name}</li>/
-              <li>{props.spacficproduct.title}</li>
+              <li>{props.spacficproduct.title&&props.spacficproduct.title.slice(0,35) }</li>
             </ul>
           </div>
 
