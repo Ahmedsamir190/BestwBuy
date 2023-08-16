@@ -193,7 +193,7 @@ function AddProducts() {
                       setValidation(true);
                     }}
                   >
-                    Submit form
+                    Add New Product
                   </button>
                 </div>
               </form>
