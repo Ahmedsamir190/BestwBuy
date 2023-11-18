@@ -86,7 +86,7 @@
 .span {
   position: absolute;
   bottom: 75%;
-  left: 85%;
+  left: 80px;
   background-color: black;
   color: white;
   padding: 3px 10px;
