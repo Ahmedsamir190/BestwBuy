@@ -30,6 +30,10 @@ module.exports = {
         protocol: "https",
         hostname: "fakestoreapi.com",
       },
+            {
+        protocol: "https",
+        hostname: "i.imgur.com",
+      },
     ],
   },
 };
