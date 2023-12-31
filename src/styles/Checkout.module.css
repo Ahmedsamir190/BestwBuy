@@ -1,0 +1,189 @@
+.checkout {
+  background-color: #dcdcdc63;
+  box-shadow: inset 1px 1px 20px 20px gainsboro;
+  padding: 70px 0;
+}
+.checkoutcontent {
+  display: flex;
+  gap: 50px;
+  margin-top: 35px;
+}
+@media (max-width: 991px) {
+  .checkoutcontent {
+    flex-wrap: wrap;
+  }
+}
+.input {
+  width: 100%;
+  padding: 7px;
+  outline-color: #0dcaf0;
+  background-color: #dcdcdc36;
+}
+.form {
+  padding: 17px 35px;
+  border-radius: 2%;
+  border: 1px solid gainsboro;
+  flex-basis: 60%;
+}
+@media (max-width: 991px) {
+  .form {
+    flex-basis: 100%;
+  }
+}
+.shippingtitle {
+  padding: 30px 0;
+  letter-spacing: 10px;
+  text-align: center;
+}
+.ordersummary {
+  flex-basis: 40%;
+  background-color: white;
+  padding: 25px;
+  line-height: 5.6;
+  box-shadow: 1px 1px 18px 20px gainsboro;
+}
+@media (max-width: 991px) {
+  .ordersummary {
+    flex-basis: 100%;
+  }
+}
+.typeofshipment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  text-align: center;
+  gap: 23px;
+}
+.typeofshipping {
+  padding: 15px 5px;
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0px 20px;
+  padding-top: 22px;
+}
+.orderinfo {
+  display: flex;
+  justify-content: space-between;
+}
+.totalborder {
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  /* position: relative; */
+  padding: 24px 0px;
+}
+.quantity {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  transform: translateY(-50%);
+}
+.span {
+  background-color: black;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 100%;
+}
+.active {
+  background-color: black;
+  padding: 15px 11px;
+  border-radius: 14%;
+  color: white;
+}
+/*start-success-page*/
+.successpage {
+  padding: 50px 25px;
+}
+.sectionsuccess {
+  position: relative;
+  background-image: url("/success.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.sectionsuccess::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dcdcdc47;
+}
+.contentsuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .contentsuccess {
+    padding: 0;
+  }
+}
+.details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 767px) {
+  .details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 15px;
+  }
+}
+@media (min-width: 991px) {
+  .details {
+    gap: 0px 13px;
+  }
+}
+
+@media (min-width: 768px) {
+  .detaone {
+    border-right: 1px solid gainsboro;
+  }
+}
+@media (min-width: 991px) {
+  .detaone {
+    padding: 0px 15px 0px 0px;
+  }
+}
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.h1 {
+  background-color: black;
+  color: white;
+  padding: 13px 19px;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}
+@media (max-width: 767px) {
+  .h1 {
+    letter-spacing: 4px;
+  }
+}
+.letterspace {
+  letter-spacing: 10px;
+}
+.imgwithquantity {
+  position: relative;
+}

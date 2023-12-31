@@ -1,0 +1,170 @@
+.productpage {
+  padding: 35px 0px;
+}
+.title {
+  margin-bottom: 40px;
+}
+.title h2 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px 0px;
+}
+/*aside for wab and mobile*/
+
+@media (min-width: 991px) {
+  .filterandcard {
+    display: grid;
+    grid-template-areas: "aside aside aside card card card card card card card card card";
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+.aside {
+  grid-area: aside;
+  background-color: white;
+  padding: 17px;
+  height: max-content;
+  border: 1px solid gainsboro;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px 4px gainsboro;
+}
+@media (max-width: 991px) {
+  .aside {
+    overflow-y: scroll;
+    padding: 10px 27px;
+  }
+}
+.allcard {
+  display: grid;
+  justify-items: center;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  background-color: white;
+  padding: 50px 15px 125px 15px;
+  position: relative;
+}
+@media (min-width: 991px) {
+  .allcard {
+    margin-left: 25px;
+    grid-area: card;
+  }
+}
+
+.card {
+  width: 18rem;
+  box-shadow: inset 1px 1px 20px 4px gainsboro;
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #00000017;
+  transition: 0.9s;
+}
+
+.card:hover::before {
+  width: 100%;
+}
+.card:hover .buttoninfo,
+.card:hover .buttonadd,
+.card:hover .shoppingcartlayout {
+  visibility: visible;
+  display: block;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 21px;
+  gap: 12px;
+}
+.readmore {
+  z-index: 5;
+  position: relative;
+  animation: Flash 3s infinite alternate linear;
+}
+@keyframes Flash {
+  0% {
+    font-weight: 100;
+  }
+  100% {
+    font-weight: 900;
+  }
+}
+.readmore:hover {
+  animation: none;
+  font-weight: 900;
+}
+.typeandrate {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.typeandrate span:first-child {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5%;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.price span:last-child {
+  text-decoration: line-through;
+  font-size: 14px;
+  background-color: #dc35456b;
+  padding: 2px 7px;
+}
+
+.upbutton {
+  position: fixed;
+  right: 0%;
+  bottom: 0%;
+  background-color: black;
+  color: white;
+  padding: 9px;
+  border: none;
+  border-radius: 10%;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.upbutton:hover {
+  opacity: 1;
+}
+/*pagination styles*/
+.pagination {
+  margin: 30px 0px;
+}
+
+.buttoninfo,
+.buttonadd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, 50%);
+}
+
+.shoppingcartlayout {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 45px;
+  display: none;
+  background-color: #ffffffc7;
+  border-radius: 30%;
+  padding: 9px;
+  cursor: pointer;
+}
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}

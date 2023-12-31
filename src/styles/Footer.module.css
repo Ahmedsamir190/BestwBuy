@@ -1,0 +1,53 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 45px 33px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px 42px;
+  flex-wrap: wrap;
+}
+.paymentlogo {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.font {
+  font-weight: 900;
+}
+.socialicons {
+  display: flex;
+  gap: 19px;
+  margin-top: 29px;
+  font-size: 25px;
+}
+.facebook {
+  color: #1877f2;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.linkedin {
+  color: #0077b5;
+}
+
+.youtube {
+  color: #ff0000;
+}
+
+.instagram {
+  color: #fcaf45;
+}
+.copyright {
+  text-align: center;
+  background-color: black;
+  color: white;
+  border-top: 1px solid white;
+  margin: 0;
+  padding: 13px;
+}
