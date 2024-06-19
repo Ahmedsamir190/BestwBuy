@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
+import Link from "next/link";
 
 function HomePartTwo() {
   return (
@@ -23,11 +24,12 @@ function HomePartTwo() {
               height={300}
               priority={true}
             />
-            <button
+            <Link
               className={`position-absolute top-50 start-50 translate-middle ${styles.shopbutton}`}
+              href={"/products"}
             >
               Shop Now
-            </button>
+            </Link>
             <div className="card-body">
               <h5 className={`card-title ${styles.title}`}>Tree Runner</h5>
               <p className="card-text">Light and Breezy Sneaker</p>
@@ -42,11 +44,12 @@ function HomePartTwo() {
               height={300}
               priority={true}
             />
-            <button
+            <Link
               className={`position-absolute top-50 start-50 translate-middle ${styles.shopbutton}`}
+              href={"/products"}
             >
               Shop Now
-            </button>
+            </Link>
             <div className="card-body">
               <h5 className={`card-title ${styles.title}`}>Tree Breezer</h5>
               <p className="card-text">Breezy Flat</p>
@@ -61,11 +64,12 @@ function HomePartTwo() {
               height={300}
               priority={true}
             />
-            <button
+            <Link
               className={`position-absolute top-50 start-50 translate-middle ${styles.shopbutton}`}
+              href={"/products"}
             >
               Shop Now
-            </button>
+            </Link>
             <div className="card-body">
               <h5 className={`card-title ${styles.title}`}>Wool Runner</h5>
               <p className="card-text">Cozy Sneaker</p>

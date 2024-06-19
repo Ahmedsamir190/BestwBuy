@@ -1,14 +1,7 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import styles from "../../styles/Addproducts.module.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
 import MoonLoader from "react-spinners/MoonLoader";
-import Col from "react-bootstrap/Col";
-import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
-import Image from "next/image";
 import Link from "next/link";
 import ProtectRoute from "@/components/protectroute/ProtectRoute";
 
@@ -23,7 +16,7 @@ function AddProducts() {
   let validationcondition = validation ? "was-validated" : "novalidate";
 
   const router = useRouter();
-
+  // here make request to json server to add new product
   const onSubmitForm = (e) => {
     setloading(true);
 
@@ -60,64 +53,6 @@ function AddProducts() {
           </Link>
         </div>
         <div className="container">
-          {/* <div className={styles.addproducttitle}>
-          <h1>Add-New-Products</h1>
-        </div> */}
-          {/* {loading ? (
-          <div className={styles.overlay}>
-            <MoonLoader color="black" loading={loading} size={50} />
-          </div>
-        ) : (
-          <Form className={styles.form} onSubmit={onSubmitForm}>
-            <Form.Group
-              className={`mb-3 ${styles.formgroup}`}
-              controlId="formBasicEmail"
-            >
-              <Form.Label>Product-Title</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter title"
-                onChange={(e) => {
-                  setTitle(e.target.value);
-                }}
-              />
-              <Form.Text className="text-muted">
-                Well never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group
-              className={`mb-3 ${styles.formgroup}`}
-              controlId="formBasicEmail"
-            >
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter description"
-                onChange={(e) => {
-                  setDescription(e.target.value);
-                }}
-              />
-            </Form.Group>
-
-            <Form.Group
-              className={`mb-5 ${styles.formgroup}`}
-              controlId="formBasicPassword"
-            >
-              <Form.Label>Price</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="ُEnter Price"
-                onChange={(e) => {
-                  setPrice(e.target.value);
-                }}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        )} */}
           {loading ? (
             <div className={styles.overlay}>
               <MoonLoader color="black" loading={loading} size={50} />

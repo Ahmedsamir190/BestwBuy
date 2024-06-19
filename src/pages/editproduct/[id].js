@@ -1,7 +1,5 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import styles from "../../styles/Editproducts.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import MoonLoader from "react-spinners/MoonLoader";
 import Link from "next/link";
@@ -16,6 +14,7 @@ function EditProductt(props) {
 
   let validationcondition = validation ? "was-validated" : "novalidate";
 
+  // here i take what the user add to update title and description and price
   const handleTitleChange = (e) => {
     setProductupdate({ ...productupdate, title: e.target.value });
   };
@@ -28,6 +27,7 @@ function EditProductt(props) {
     setProductupdate({ ...productupdate, price: e.target.value });
   };
 
+  //here i make request to json server to make update
   const OnSubmitFormPut = (e) => {
     e.preventDefault();
     fetch(`https://json-serverr.glitch.me/products/${id}`, {
@@ -63,52 +63,6 @@ function EditProductt(props) {
         <div className={styles.addproducttitle}>
           <h1>Update-Product:{id}</h1>
         </div>
-        {/* <Form className={styles.form} onSubmit={OnSubmitFormPut}>
-          <Form.Group
-            className={`mb-3 ${styles.formgroup}`}
-            controlId="formBasicEmail"
-          >
-            <Form.Label>Product-Title</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter title"
-              value={productupdate.title}
-              onChange={handleTitleChange}
-            />
-            <Form.Text className="text-muted">
-              Well never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group
-            className={`mb-3 ${styles.formgroup}`}
-            controlId="formBasicEmail"
-          >
-            <Form.Label>Description</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter description"
-              value={productupdate.description}
-              onChange={handleDescriptionChange}
-            />
-          </Form.Group>
-
-          <Form.Group
-            className={`mb-5 ${styles.formgroup}`}
-            controlId="formBasicPassword"
-          >
-            <Form.Label>Price</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="ُEnter Price"
-              value={productupdate.price}
-              onChange={handlePriceChange}
-            />
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form> */}
         {loading ? (
           <div className={styles.overlay}>
             <MoonLoader color="black" loading={loading} size={50} />

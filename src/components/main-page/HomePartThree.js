@@ -1,13 +1,11 @@
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
-import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function HomePartThree(props, deviceType) {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -47,12 +45,14 @@ function HomePartThree(props, deviceType) {
           className="pb-5"
         >
           {props.productsale.map((product) => {
+            const imgurl =
+              product.images.length > 1 ? product.images[0] : "/nophoto2.jpeg";
             return (
               <div className={`card `} key={product.id}>
                 <Image
-                  src={"/nophoto2.jpeg"}
+                  src={imgurl}
                   className="card-img-top  "
-                  alt="photo"
+                  alt="product photo"
                   width={300}
                   height={300}
                   priority={true}

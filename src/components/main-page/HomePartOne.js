@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 import Carouselcomponent from "../carousel/Carouselcomponent";
 import { FaTelegramPlane, FaUndoAlt, FaLock, FaTag } from "react-icons/fa";
@@ -13,7 +14,7 @@ function HomePartOne() {
         <p>
           Super Packable. Versatile. And All-Day (And Night) Adventure Ready.
         </p>
-        <button>click</button>
+        <Link href={"/products"}>click</Link>
       </div>
       <div className={styles.list}>
         <ul>

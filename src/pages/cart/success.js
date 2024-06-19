@@ -1,9 +1,7 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { FaRegCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-
 import Link from "next/link";
 import { Clear } from "@/RTK/slice/cartSlice";
 import styles from "../../styles/Checkout.module.css";
@@ -20,9 +18,6 @@ function Success() {
 
   const dispatch = useDispatch();
 
-  //   useEffect(() => {
-  //     dispatch(GetTotalPrice());
-  //   }, [productincart, dispatch]);
   useEffect(() => {
     setTime(displaydate);
     setDdate(displaytime);

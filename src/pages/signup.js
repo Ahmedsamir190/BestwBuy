@@ -1,27 +1,23 @@
-import { FaShoppingCart, FaUserEdit } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleVisiblePass } from "../RTK/slice/passToggle";
-import { FaEye, FaRegEyeSlash, FaSmile } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  updateEmail,
-  updateProfile,
-} from "firebase/auth";
-import { auth } from "../Firebase";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from "../Firebase";
-import { setDoc, doc } from "firebase/firestore";
-import { db } from "../Firebase";
-import Swal from "sweetalert2";
-// import RiseLoader from "react-spinners/RiseLoader";
-// import Nophoto from "../../components/images/Nophoto.png";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { setDoc, doc } from "firebase/firestore";
+import {
+  FaShoppingCart,
+  FaUserEdit,
+  FaEye,
+  FaRegEyeSlash,
+  FaSmile,
+} from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { auth, storage, db } from "../Firebase";
+import { toggleVisiblePass } from "../RTK/slice/passToggle";
 import styles from "../styles/Sign.module.css";
-import Placeholder from "react-bootstrap/Placeholder";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -31,14 +27,18 @@ function SignUp() {
   const [loading, setloading] = useState(false);
 
   const [validation, setValidation] = useState(false);
-
+  //Thats for form validation add class to show validation
   let validationcondition = validation ? "was-validated" : "novalidate";
 
   const router = useRouter();
 
+  /* - here first one i try to prevent default for form 
+     - and update state to loading some loader
+     - i make try and catch method to to send date for new email to firebase server
+     - i used sweet alert library to show user when the operation done or show error 
+*/
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setloading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -124,6 +124,7 @@ function SignUp() {
                   priority={true}
                 />
               </div>
+              {/* here i divided page for two part photo and form  */}
               <div className={`${styles.form} `}>
                 <div className={styles.title}>
                   <Link href="/" className="text-decoration-none">

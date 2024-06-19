@@ -2,14 +2,20 @@ import { useState, useEffect } from "react";
 import { FaRegCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { GetTotalPrice } from "@/RTK/slice/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Checkout.module.css";
-import PropagateLoader from "react-spinners/PropagateLoader";
 import ProtectRoute from "@/components/protectroute/ProtectRoute";
 
 function CheckOut() {
+  const [loading, setloading] = useState(true);
+  const [validation, setValidation] = useState(false);
+  const [totalprice, settotalPrice] = useState();
+  const [totalquantity, settotalQuantity] = useState();
+  const productincart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  let validationcondition = validation ? "was-validated" : "novalidate";
+
   const countriess = [
     "United States",
     "Canada",
@@ -251,22 +257,9 @@ function CheckOut() {
     "Zambia",
     "Zimbabwe",
   ];
-
-  const [loading, setloading] = useState(true);
-
   setTimeout(() => {
     setloading(false);
   }, 5000);
-
-  const [validation, setValidation] = useState(false);
-
-  let validationcondition = validation ? "was-validated" : "novalidate";
-
-  const productincart = useSelector((state) => state.cart);
-
-  const dispatch = useDispatch();
-  const [totalprice, settotalPrice] = useState();
-  const [totalquantity, settotalQuantity] = useState();
 
   useEffect(() => {
     const totalpricee = productincart.reduce((acc, product) => {
@@ -287,7 +280,6 @@ function CheckOut() {
       <section>
         {loading ? (
           <div className={styles.overlay}>
-            {/* <PropagateLoader color="black" loading={loading} size={50} /> */}
             <Image
               src={"/tet.gif"}
               alt={""}

@@ -13,9 +13,10 @@
 }
 .content p {
   font-weight: 800;
+  margin-bottom: 3rem;
 }
-.content button {
-  padding: 8px 60px;
+.content a {
+  padding: 13px 55px;
   font-weight: 900;
   transition: 0.9s;
   border-radius: 6%;
@@ -23,7 +24,7 @@
   background-color: rgb(255 255 255 / 45%);
 }
 
-.content button:hover {
+.content a:hover {
   background-color: white;
 }
 .list {
@@ -112,6 +113,7 @@
   padding: 11px 31px;
   border: 0;
   font-weight: 800;
+  background-color: #ffffffc9;
   visibility: hidden;
 }
 /*styles for home part (three) */

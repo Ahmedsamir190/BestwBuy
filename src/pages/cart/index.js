@@ -3,15 +3,7 @@ import { FaArrowCircleRight, FaTrashAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import EmptyCart from "@/components/empty-cart/EmptyCart";
-import {
-  addtocart,
-  Deleted,
-  Clear,
-  Increment,
-  Decrement,
-  GetTotalPrice,
-  GetTotalQuantity,
-} from "@/RTK/slice/cartSlice";
+import { Deleted, Increment, Decrement } from "@/RTK/slice/cartSlice";
 import { toast } from "react-toastify";
 import styles from "../../styles/Cart.module.css";
 import Image from "next/image";
@@ -36,15 +28,6 @@ function Cart() {
     settotalPrice(totalpricee);
     settotalQuantity(total_quantity);
   }, [productincart]);
-
-  // const totalpricee = productincart.reduce((acc, product) => {
-  //   acc += product.price * product.quantity;
-  //   return acc;
-  // }, 0);
-
-  // const total_quantity = productincart.reduce((cartquantity, cartitem) => {
-  //   return cartquantity + cartitem.quantity;
-  // }, 0);
 
   return (
     <section>
@@ -143,12 +126,6 @@ function Cart() {
                   <td>{totalquantity}</td>
                   {totalprice >= 1 && <td>${totalprice.toFixed(0)} </td>}
                   <td>
-                    {/* <button
-                        className="btn btn-outline-danger"
-                        onClick={() => dispatch(Clear())}
-                      >
-                        Clear-Cart
-                      </button> */}
                     <Link
                       href={"/cart/checkout"}
                       onClick={() => {

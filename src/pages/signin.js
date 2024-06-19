@@ -6,8 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { auth } from "../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Swal from "sweetalert2";
-import { async } from "@firebase/util";
-import PacmanLoader from "react-spinners/PacmanLoader";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Sign.module.css";
@@ -56,9 +54,11 @@ function SignIn() {
   };
 
   const ref = useRef();
+
   useEffect(() => {
     ref.current.focus();
   }, []);
+
   const scroll = () => {
     window.scrollTo({
       top: 0,

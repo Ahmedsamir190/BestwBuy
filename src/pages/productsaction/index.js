@@ -14,7 +14,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import swalWithBootstrapButtons from "sweetalert2";
 import Link from "next/link";
-import Image from "next/image";
 import ProtectRoute from "@/components/protectroute/ProtectRoute";
 
 function ProductsAction(props) {
@@ -26,6 +25,7 @@ function ProductsAction(props) {
     GetAllProducts();
   }, []);
 
+  //fetch to get all products
   const GetAllProducts = () => {
     fetch("https://json-serverr.glitch.me/products")
       .then((res) => res.json())
@@ -33,7 +33,9 @@ function ProductsAction(props) {
         setItems(data);
       });
   };
-
+  /* - here i make aleart to make sure user went to delete product
+   - and make request to delete product user choose from json server
+*/
   const DeleteProduct = (productid) => {
     swalWithBootstrapButtons
       .fire({
@@ -63,6 +65,7 @@ function ProductsAction(props) {
   };
 
   useEffect(() => {
+    // to show button up
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 500) {
         setShowbutton(true);

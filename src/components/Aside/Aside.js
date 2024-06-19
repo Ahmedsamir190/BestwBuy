@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "../../styles/Aside.module.css";
 import {
   FcCandleSticks,
   FcMoneyTransfer,
   FcCurrencyExchange,
-  FcRedo,
   FcPlus,
 } from "react-icons/fc";
-import Placeholder from "react-bootstrap/Placeholder";
 
 function Aside(props) {
   const [iconsone, setIconsone] = useState(true);
@@ -129,13 +127,6 @@ function Aside(props) {
                   return (
                     <div key={category.id}>
                       {placeholer ? (
-                        // <Placeholder
-                        //   as="p"
-                        //   animation="glow"
-                        //   bg-secondary="true"
-                        // >
-                        //   <Placeholder xs={12} />
-                        // </Placeholder>
                         <span className="placeholder col-12 placeholder-xs"></span>
                       ) : (
                         <div

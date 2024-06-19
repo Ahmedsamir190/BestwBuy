@@ -1,4 +1,3 @@
-import { FaShoppingBasket } from "react-icons/fa";
 import styles from "../../styles/Cart.module.css";
 import Image from "next/image";
 

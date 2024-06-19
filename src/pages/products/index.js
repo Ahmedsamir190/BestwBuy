@@ -27,6 +27,7 @@ function Products(props) {
   const [isHovered, setIsHovered] = useState(false);
   const [loadingaside, setLoadingaside] = useState(false);
 
+  // here i start to not loading all date and make a pagination
   const indexoflastproduct = currentpage * productsperpage;
   const indexoffirstproduct = indexoflastproduct - productsperpage;
 
@@ -35,6 +36,7 @@ function Products(props) {
     indexoflastproduct
   );
 
+  //here function for filter by category
   const GetspecificCategory = (catagoryId) => {
     fetch(`https://api.escuelajs.co/api/v1/products/?categoryId=${catagoryId}`)
       .then((res) => res.json())
@@ -42,6 +44,7 @@ function Products(props) {
         setProducts(data);
       });
   };
+  // here request to get all categories and start display
   const GetallCategories = () => {
     fetch("https://api.escuelajs.co/api/v1/categories")
       .then((res) => res.json())
@@ -114,6 +117,11 @@ function Products(props) {
                   />
                 ) : (
                   currentproduct.map((prodduct, index) => {
+                    const imgurl =
+                      prodduct.images.length > 1
+                        ? prodduct.images[0]
+                        : "/nophoto2.jpeg";
+
                     return (
                       <div key={index}>
                         {placeholder ? (
@@ -144,38 +152,15 @@ function Products(props) {
                             </div>
                           </div>
                         ) : (
-                          <div
-                            className={`card ${styles.card}`}
-                            // onMouseEnter={() => setIsHovered(true)}
-                            // onMouseLeave={() => setIsHovered(false)}
-                          >
+                          <div className={`card ${styles.card}`}>
                             <Image
-                              src={"/nophoto2.jpeg"}
+                              src={imgurl}
                               className="card-img-top img-fluid"
-                              alt={prodduct.images[0]}
+                              alt={"product photo"}
                               width={300}
                               height={300}
                               priority={true}
                             />
-                            {/* {prodduct.category.image ? (
-                              <Image
-                                src={imageSrc}
-                                className="card-img-top "
-                                alt=""
-                                width={300}
-                                height={300}
-                                priority={true}
-                              />
-                            ) : (
-                              <Image
-                                src={"/nophoto2.jpeg"}
-                                className="img-product-id "
-                                alt="..."
-                                width={300}
-                                height={300}
-                                priority={true}
-                              />
-                            )} */}
                             <div>
                               <FaShoppingCart
                                 className={styles.shoppingcartlayout}

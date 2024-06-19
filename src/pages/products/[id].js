@@ -3,7 +3,6 @@ import styles from "../../styles/Info.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addtocart } from "@/RTK/slice/cartSlice";
 import { toast } from "react-toastify";
-
 import {
   FaStar,
   FaStarHalfAlt,
@@ -26,7 +25,6 @@ function Info(props, deviceType) {
   const dispatch = useDispatch();
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -101,25 +99,6 @@ function Info(props, deviceType) {
                     }}
                     enlargedImagePosition="over"
                   />
-                  {/* {props.spacficproduct.images[0] ? (
-                    <Image
-                      src={props.spacficproduct.images[0]}
-                      className="card-img-top "
-                      alt="..."
-                      width={300}
-                      height={300}
-                      priority={true}
-                    />
-                  ) : (
-                    <Image
-                      src={"/nophoto2.jpeg"}
-                      className="card-img-top "
-                      alt="..."
-                      width={300}
-                      height={300}
-                      priority={true}
-                    />
-                  )} */}
                 </div>
                 <div className="col-md-6">
                   <div className="card-body text-center">
@@ -221,29 +200,14 @@ function Info(props, deviceType) {
                   className="pb-5"
                 >
                   {products.map((product) => {
+                    const imgurl =
+                      product.images.length > 1
+                        ? product.images[0]
+                        : "/nophoto2.jpeg";
                     return (
                       <div className={`card ${styles.card}`} key={product.id}>
-                        {/* {product.images[0] ? (
-                          <Image
-                            src={product.images[0]}
-                            className="card-img-top  "
-                            alt="/nophoto2.jpeg"
-                            width={300}
-                            height={300}
-                            priority={true}
-                          />
-                        ) : (
-                          <Image
-                            src={"/nophoto2.jpeg"}
-                            className="card-img-top  "
-                            alt="photo"
-                            width={300}
-                            height={300}
-                            priority={true}
-                          />
-                        )} */}
                         <Image
-                          src={"/nophoto2.jpeg"}
+                          src={imgurl}
                           className="card-img-top  "
                           alt="photo"
                           width={300}
