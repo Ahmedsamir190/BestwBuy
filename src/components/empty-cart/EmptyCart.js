@@ -13,8 +13,8 @@ function EmptyCart() {
       />
       <h3>Your cart is empty</h3>
       <p>
-        looks like you have not addedanything to your cart
-        <br /> go ahead & explore top products
+        it looks like you have not added anything to your cart
+        <br /> go ahead & explore products
       </p>
     </div>
   );
